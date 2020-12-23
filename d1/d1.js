@@ -26,9 +26,6 @@ const threeSumTo2020 = async () => {
     for (let j = i + 1; j < nums.length; j++) {
       const diff = twoSum - nums[j];
       if (set.has(diff)) {
-        console.log(diff);
-        console.log(nums[i]);
-        console.log(nums[j]);
         return nums[i] * nums[j] * diff;
       }
       set.add(nums[j]);
