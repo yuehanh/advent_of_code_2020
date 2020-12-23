@@ -36,4 +36,17 @@ const validPw = (lines) => {
   return validCount;
 };
 
+const validPw2 = (lines) => {
+  let validCount = 0;
+  for (const line of lines) {
+    const { min, max, char, pw } = interpretLine(line);
+    const posOne = min - 1;
+    const posTwo = max - 1;
+    const isValid = (pw[posOne] === char) ^ (pw[posTwo] === char);
+    if (isValid) validCount++;
+  }
+  return validCount;
+};
+
 console.log(validPw(lines));
+console.log(validPw2(lines));
