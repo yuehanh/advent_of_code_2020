@@ -32,4 +32,23 @@ const maxSeatId = () => {
 
 console.log(maxSeatId());
 
+const findSeat = () => {
+  let low = Infinity;
+  let high = 0;
+  const seatIds = new Set();
+  for (const input of inputs) {
+    const seatId = interpretSeatId(input);
+    high = Math.max(seatId, high);
+    low = Math.min(seatId, low);
+    seatIds.add(seatId);
+  }
 
+  while (low < high) {
+    if (!seatIds.has(low)) {
+      return low;
+    }
+    low++;
+  }
+};
+
+console.log(findSeat());
