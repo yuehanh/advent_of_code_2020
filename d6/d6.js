@@ -23,3 +23,23 @@ const sumOfYesCounts = () => {
 };
 
 console.log(sumOfYesCounts());
+
+const numOfCommonYes = (input) => {
+  const answers = input.split("\n");
+  let commonSet = new Set(answers[0].split(""));
+  for (const ans of answers) {
+    commonSet = new Set([...ans].filter((q) => commonSet.has(q)));
+  }
+  return commonSet.size;
+};
+
+const sumOfCommonYesCounts = () => {
+  let count = 0;
+  for (const group of inputs) {
+    count += numOfCommonYes(group);
+  }
+
+  return count;
+};
+
+console.log(sumOfCommonYesCounts());
