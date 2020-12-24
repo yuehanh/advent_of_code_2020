@@ -1,8 +1,8 @@
 const fs = require("fs");
 
-const parseInput = (source) => {
+const parseInput = (source, sep = "\n") => {
   const data = fs.readFileSync(`./${source}/input`, "utf-8");
-  return data.split("\n");
+  return data.split(sep);
 };
 
 module.exports = parseInput;
