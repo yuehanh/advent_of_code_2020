@@ -37,7 +37,6 @@ const countOuterBags = (color) => {
   const map = constructGraph();
   const outerBags = new Set();
   const queue = [color];
-  console.log(outerBags);
   while (queue.length > 0) {
     const currColor = queue.shift();
     const colorArr = map[currColor] || [];
